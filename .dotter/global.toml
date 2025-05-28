@@ -4,7 +4,7 @@
 depends = []
 
 [default.files]
-dotter = ""
+"hypr/hyprland.conf" = ".config/hypr/hyprland.conf"
 
 [default.variables]
 
