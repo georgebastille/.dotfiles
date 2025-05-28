@@ -3,10 +3,19 @@
 [default]
 depends = []
 
+[default.variables]
+
 [default.files]
 "hypr/hyprland.conf" = "~/.config/hypr/hyprland.conf"
 
-[default.variables]
+[pixelbook]
+depends = []
+
+[pixelbook.variables]
+
+[pixelbook.files]
+"pixelbook/61-pixel-keyboard.hwdb" = "/etc/udev/hwdb.d/61-pixel-keyboard.hwdb"
+"pixelbook/tlp.conf" = "/etc/tlp.conf"
 
 [settings]
 default_target_type = "automatic"

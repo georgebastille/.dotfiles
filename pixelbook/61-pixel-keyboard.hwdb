@@ -1,0 +1,4 @@
+evdev:atkbd:dmi:bvn*:bvr*:bd*:svnGoogle:pn*:pvr*
+ KEYBOARD_KEY_db=leftctrl
+ KEYBOARD_KEY_d8=leftmeta
+
