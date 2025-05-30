@@ -7,15 +7,7 @@ depends = []
 
 [default.files]
 "hypr/hyprland.conf" = "~/.config/hypr/hyprland.conf"
-
-[pixelbook]
-depends = []
-
-[pixelbook.variables]
-
-[pixelbook.files]
-"pixelbook/61-pixel-keyboard.hwdb" = "/etc/udev/hwdb.d/61-pixel-keyboard.hwdb"
-"pixelbook/tlp.conf" = "/etc/tlp.conf"
+"waybar/" = "~/.config/waybar/"
 
 [settings]
 default_target_type = "automatic"
