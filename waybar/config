@@ -81,7 +81,7 @@
       "tooltip-format": "{ipaddr}",
       "tooltip-format-wifi": "{essid} ({signalStrength}%)  | {ipaddr}",
       "tooltip-format-ethernet": "{ifname} 🖧 | {ipaddr}",
-      "on-click": "kitty nmtui edit"
+      "on-click": "kitty nmtui connect"
     },
 
 "battery": {
