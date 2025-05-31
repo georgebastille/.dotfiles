@@ -8,6 +8,9 @@ depends = []
 [default.files]
 "hypr/hyprland.conf" = "~/.config/hypr/hyprland.conf"
 "waybar/" = "~/.config/waybar/"
+"launchers/brave-browser.desktop" = "~/.local/share/applications/brave-browser.desktop"
+"launchers/obsidian.desktop" = "~/.local/share/applications/obsidian.desktop"
+
 
 [settings]
 default_target_type = "automatic"

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Obsidian
+Exec=env QT_QPA_PLATFORM=wayland-electron /usr/bin/obsidian --enable-features=WaylandWindowDecorations --ozone-platform=wayland %U
+Terminal=false
+Type=Application
+Icon=obsidian
+StartupWMClass=obsidian
+Comment=Obsidian
+MimeType=x-scheme-handler/obsidian;
+Categories=Office;
