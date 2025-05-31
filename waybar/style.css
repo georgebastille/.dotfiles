@@ -1,8 +1,9 @@
 * {
     border: none;
-    font-size: 14px;
-    font-family: "JetBrainsMono Nerd Font,JetBrainsMono NF" ;
-    min-height: 25px;
+    font-size: 12px;
+    font-family: "Noto Sans Nerd Font" ;
+    min-height: 16px;
+    color: #ffffff;
 }
 
 window#waybar {
