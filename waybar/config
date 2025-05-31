@@ -45,14 +45,14 @@
 
 "custom/clipboard":{
   "format":"",
-  "on-click": "cliphist list | rofi -dmenu | cliphist decode | wl-copy",
+  "on-click": "cliphist list | wofi -dmenu | cliphist decode | wl-copy",
   "interval":86400
 },
 
 
 "clock": {
-      "format": "{:%I:%M:%S %p}",
-      "interval":1,
+      "format": "{:%H:%M}",
+      "interval":60,
       "tooltip-format": "\n<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
       "calendar-weeks-pos": "right",
       "today-format": "<span color='#7645AD'><b><u>{}</u></b></span>",
@@ -71,7 +71,7 @@
   "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
   "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
   "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-  "on-click": "rofi-bluetooth",
+  "on-click": "wofi-bluetooth",
  }, 
 
 "network": {
@@ -85,12 +85,7 @@
     },
 
 "battery": {
-    "interval":1,
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 20
-        },
+    "interval":60,
         "format": "{capacity}%  {icon} ",
         "format-charging": "{capacity}% 󰂄 ",
         "format-plugged": "{capacity}% 󰂄 ",
@@ -140,7 +135,7 @@
   },
 
   "cpu": {
-      "interval": 1,
+      "interval": 5,
       "format": " {usage}%",
       "min-length": 6,
       "max-length": 6,
@@ -162,9 +157,9 @@
 "temperature": {
   "format": " {temperatureC}°C",            
   "format-critical": " {temperatureC}°C",
-  "interval": 1,
+  "interval": 60,
   "critical-threshold": 80,
-  "on-click": "foot btop",
+  "on-click": "kitty btop",
  },
 
 "pulseaudio": {
@@ -208,7 +203,7 @@
 
   "custom/powerDraw": {
     "format": "{}",
-    "interval": 1,
+    "interval": 5,
     "exec": "~/.config/waybar/scripts/powerdraw.sh",
     "return-type": "json"
   }
