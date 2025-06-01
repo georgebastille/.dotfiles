@@ -10,6 +10,11 @@ depends = []
 "waybar/" = "~/.config/waybar/"
 "kitty/" = "~/.config/kitty/"
 "nvim/init.vim" = "~/.config/nvim/init.vim"
+"bash/bash_profile" = "~/.bash_profile"
+"bash/bashrc" = "~/.bashrc"
+"bash/inputrc" = "~/.inputrc"
+"bash/git-prompt.sh" = "~/.prompt-git.sh"
+"tmux.conf" = "~/.tmux.conf"
 "launchers/brave-browser.desktop" = "~/.local/share/applications/brave-browser.desktop"
 "launchers/obsidian.desktop" = "~/.local/share/applications/obsidian.desktop"
 
