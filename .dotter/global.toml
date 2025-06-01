@@ -9,6 +9,7 @@ depends = []
 "hypr/hyprland.conf" = "~/.config/hypr/hyprland.conf"
 "waybar/" = "~/.config/waybar/"
 "kitty/" = "~/.config/kitty/"
+"nvim/init.vim" = "~/.config/nvim/init.vim"
 "launchers/brave-browser.desktop" = "~/.local/share/applications/brave-browser.desktop"
 "launchers/obsidian.desktop" = "~/.local/share/applications/obsidian.desktop"
 

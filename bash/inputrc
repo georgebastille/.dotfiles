@@ -1,0 +1,43 @@
+set editing-mode vi
+
+# vi settings
+$if mode=vi
+    set keymap vi-insert
+    "jk": vi-movement-mode # remap escape
+    set show-mode-in-prompt on
+    Control-p: history-search-backward
+$endif
+
+# Most of these come from:
+# https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html
+
+# https://stackoverflow.com/questions/42192384/show-all-if-ambiguous-vs-show-all-if-unmodified
+set show-all-if-ambiguous on
+set print-completions-horizontally on
+set skip-completed-text on
+set colored-stats on
+set match-hidden-files off
+set completion-ignore-case on
+set bell-style visible
+
+#set page-completions off
+#set menu-complete-display-prefix on
+#TAB:menu-complete
+
+# Some goodies in here:
+# https://raw.githubusercontent.com/ericvw/dotfiles/master/bash/.inputrc
+
+# complete full matches of already typed text using arrow keys
+$if mode=vi
+    set keymap vi-command
+    "\e[A": history-search-backward
+    "\e[B": history-search-forward
+    set keymap vi-insert
+    "\e[A": history-search-backward
+    "\e[B": history-search-forward
+$endif
+
+# utf-8 input/output
+set convert-meta on
+set input-meta on
+set output-meta on
