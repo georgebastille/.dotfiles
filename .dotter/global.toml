@@ -17,6 +17,7 @@ depends = []
 "tmux.conf" = "~/.tmux.conf"
 "launchers/brave-browser.desktop" = "~/.local/share/applications/brave-browser.desktop"
 "launchers/obsidian.desktop" = "~/.local/share/applications/obsidian.desktop"
+"tofi/config" = "~/.config/tofi/config"
 
 
 [settings]
