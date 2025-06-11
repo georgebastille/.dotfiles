@@ -18,6 +18,7 @@ depends = []
 "launchers/brave-browser.desktop" = "~/.local/share/applications/brave-browser.desktop"
 "launchers/obsidian.desktop" = "~/.local/share/applications/obsidian.desktop"
 "tofi/config" = "~/.config/tofi/config"
+"fuzzel/fuzzel.ini" = "~/.config/fuzzel/fuzzel.ini"
 
 
 [settings]
