@@ -17,6 +17,8 @@ depends = []
 "tmux.conf" = "~/.tmux.conf"
 "launchers/brave-browser.desktop" = "~/.local/share/applications/brave-browser.desktop"
 "launchers/obsidian.desktop" = "~/.local/share/applications/obsidian.desktop"
+"launchers/chatgpt.desktop" = "~/.local/share/applications/chatgpt.desktop"
+"launchers/web-search.desktop" = "~/.local/share/applications/web-search.desktop"
 "tofi/config" = "~/.config/tofi/config"
 "fuzzel/fuzzel.ini" = "~/.config/fuzzel/fuzzel.ini"
 

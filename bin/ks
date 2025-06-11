@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Simple URL encoding using jq (assuming it's installed)
+query=$(printf '%s' "$*" | jq -s -R -r @uri)
+
+exec brave --ozone-platform=wayland --enable-features=UseOzonePlatform "https://kagi.com/search?q=$query"
+
