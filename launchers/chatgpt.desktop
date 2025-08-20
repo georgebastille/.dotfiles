@@ -7,11 +7,11 @@ GenericName=Web Search
 # Gnome and KDE 3 uses Comment.
 Comment=Search the Internet
 StartupNotify=true
-StartupWMClass=brave-browser
-TryExec=brave
-Exec=brave chatgpt.com
+StartupWMClass=zen-browser
+TryExec=zen-browser
+Exec=zen-browser chatgpt.com
 Terminal=false
-Icon=brave-desktop
+Icon=zen-desktop
 Type=Application
 Categories=Network;WebBrowser;
 MimeType=application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ipfs;x-scheme-handler/ipns;

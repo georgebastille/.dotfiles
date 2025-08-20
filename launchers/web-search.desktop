@@ -7,8 +7,8 @@ GenericName=Web Search
 # Gnome and KDE 3 uses Comment.
 Comment=Search the Internet
 StartupNotify=true
-StartupWMClass=brave-browser
-TryExec=brave
+StartupWMClass=zen-browser
+TryExec=zen-browser
 Exec=/home/richie/.local/bin/ks %U
 Terminal=false
 Icon=brave-desktop

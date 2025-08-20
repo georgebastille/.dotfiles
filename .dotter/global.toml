@@ -21,6 +21,7 @@ depends = []
 "launchers/web-search.desktop" = "~/.local/share/applications/web-search.desktop"
 "tofi/config" = "~/.config/tofi/config"
 "fuzzel/fuzzel.ini" = "~/.config/fuzzel/fuzzel.ini"
+"niri/config.kdl" = "~/.config/niri/config.kdl"
 
 
 [settings]
