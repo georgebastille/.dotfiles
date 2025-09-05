@@ -22,13 +22,6 @@ window#waybar {
   background: #000000;
 }
 
-.modules-center {
-  padding: 0 15px;
-  margin-top: 2px;
-  border-radius: 15px 15px 15px 15px;
-  background: #000000;
-}
-
 .modules-left {
   border-radius: 0 15px 15px 0;
   margin-top: 2px;

@@ -1,7 +1,6 @@
 {
   "layer": "top", "position": "top",
-  "modules-left": ["custom/logo", "battery", "custom/powerDraw", "disk", "memory", "cpu", "temperature", "hyprland/window" ],
-  "modules-center": [  "hyprland/workspaces"],
+  "modules-left": ["custom/logo", "battery", "custom/powerDraw", "disk", "memory", "cpu", "temperature" ],
   "modules-right": ["tray",  "custom/clipboard", "backlight", "bluetooth", "pulseaudio", "network",  "clock" ],
   "reload_style_on_change":true,
 
@@ -9,35 +8,6 @@
     "format": "",
     "tooltip": false
   },
-
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "urgent": "",
-	  "active": "",// focused workspace on current monitor 
-      "visible": "", // focused workspace on other monitors
-      "default": "",
-      "empty": "" // persistent (created by this plugin)
-    },
-    "all-outputs": false // recommended
-  },
-
-  //"hyprland/workspaces": {
-	//"format": "{icon}",
-	//"format-icons": {
-		//"1": "",
-		//"2": "",
-		//"3": "",
-		//"4": "",
-		//"5": "",
-		//"6": "",
-		//"active": "",
-		//"default": "" 
-	//},
-       //"persistent-workspaces": {
-         //"*": [ 2, 3, 4, 7, 8, 9 ]
-       //}
-//},
 
 "idle_inhibitor":{
   "format": "<span font='12'>{icon} </span>",
@@ -93,7 +63,7 @@
       "tooltip-format": "{ipaddr}",
       "tooltip-format-wifi": "{essid} ({signalStrength}%)  | {ipaddr}",
       "tooltip-format-ethernet": "{ifname} 🖧 | {ipaddr}",
-      "on-click": "kitty nmtui connect"
+      "on-click": "alacritty -e nmtui connect"
     },
 
 "battery": {
@@ -158,21 +128,13 @@
   "format": " {percentage}%"
 },
 
- "hyprland/window": {
-    "format": "( {class} )",
-    "rewrite": {
-         "(.*) - Mozilla Firefox": "🌎 $1",
-         "(.*) - zsh": "> [$1]"
-    }
-},
-
 "temperature": {
   "thermal-zone": 1,
   "format": " {temperatureC}°C",            
   "format-critical": " {temperatureC}°C",
   "interval": 60,
   "critical-threshold": 80,
-  "on-click": "kitty btop",
+  "on-click": "alacritty -e btop",
  },
 
 "pulseaudio": {
