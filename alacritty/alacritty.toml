@@ -1,0 +1,45 @@
+# Alacritty config generated from your kitty.conf
+
+# --- Fonts ---
+[font]
+size = 9.0
+
+[font.normal]
+family = "NotoSansM Nerd Font Mono"
+# style = "Regular"   # (optional)
+
+# Alacritty auto-derives bold/italic from the family; no need to set explicitly.
+
+# --- Cursor ---
+[cursor]
+style.shape = "Block"
+# style.blinking = "Never"
+
+# --- Scrolling ---
+[scrolling]
+history = 5000
+
+# --- Window ---
+[window]
+# kitty's window_margin_width ≈ Alacritty padding (in pixels)
+padding = { x = 2, y = 2 }
+
+# Alacritty has no confirm-on-close prompt; nothing to set for kitty's confirm_os_window_close.
+
+# --- Selection / Clipboard ---
+[selection]
+# kitty's copy_on_select yes
+save_to_clipboard = true
+
+# --- Tabs / UI ---
+# Note: Alacritty does not implement tabs, so kitty's tab_bar_style has no equivalent.
+
+# --- Colors / Theme ---
+# kitty: include themes/Afterglow.conf
+# In Alacritty you can import a theme file. If you have an Afterglow palette for Alacritty,
+# place it at the path below (or adjust to where you keep themes).
+#import = ["~/.config/alacritty/themes/afterglow.toml"]
+
+# If you don't have an Afterglow theme file yet, you can comment the import above
+# and paste a [colors] section here later.
+
