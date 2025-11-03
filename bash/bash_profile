@@ -1,11 +1,16 @@
 # .bash_profile
+export XDG_RUNTIME_DIR=$(ls -d /tmp/service-$USER.???* 2>/dev/null || mktemp -d /tmp/service-$USER.XXX | tee >(xargs chmod 0700))
+#if [[ -z "$XDG_RUNTIME_DIR" ]]; then
+#  export XDG_RUNTIME_DIR="/run/user/$(id -u)"
+#  mkdir -p "$XDG_RUNTIME_DIR"
+#  chmod 700 "$XDG_RUNTIME_DIR"
+#fi
 
-# Clean up python env
-# https://gist.github.com/MuhsinFatih/ee0154199803babb449b5bb98d3475f7
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-. "$HOME/.local/bin/env"
-
-if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
+if [[ $(tty) == /dev/tty1 ]]; then
+  brightnessctl -q -d intel_backlight set 40%
+  brightnessctl -q -d chromeos::kbd_backlight set 100%
+  exec dbus-run-session niri --session
 fi
+
+# Get the aliases and functions
+[ -f $HOME/.bashrc ] && . $HOME/.bashrc
