@@ -340,6 +340,13 @@ window-rule {
     clip-to-geometry true
 }
 
+// Disable the hot corners.
+gestures {
+    hot-corners {
+        off
+    }
+}
+
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
@@ -360,9 +367,10 @@ binds {
     Mod+Space hotkey-overlay-title="Open the Launcher Menu: fuzzel" { spawn "fuzzel"; }
     Mod+B hotkey-overlay-title="Open Web Browser: firefox" { spawn "firefox-wayland"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-	// Screenshot (Hypr: grim -g "$(slurp)" - | wl-copy)
-	Mod+Shift+S { spawn "bash" "-c" "grim -g \"$(slurp)\" - | wl-copy"; }
-	Mod+V { spawn "bash" "-c" "cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy"; }
+    // Screenshot (Hypr: grim -g "$(slurp)" - | wl-copy)
+    //Mod+Shift+S { spawn "bash" "-c" "grim -g \"$(slurp)\" - | wl-copy"; }
+    Mod+Shift+S { screenshot; }
+    Mod+V { spawn "bash" "-c" "cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
@@ -385,6 +393,7 @@ binds {
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
     Mod+O repeat=false { toggle-overview; }
+    Mod+Tab repeat=false { toggle-overview; }
 
     Mod+Q { close-window; }
 
