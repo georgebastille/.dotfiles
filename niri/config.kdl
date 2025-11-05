@@ -257,13 +257,11 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "pipewire"
-//spawn-at-startup "wireplumber"
 spawn-at-startup "mako"
-spawn-at-startup "swww-daemon"
 spawn-at-startup "waybar"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets"
-spawn-at-startup "swww" "img" "~/wallpapers/1334608-2400x1600.jpeg" 
+spawn-at-startup "wbg" "/home/richie/Wallpapers/1322308.jpeg"
  
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
