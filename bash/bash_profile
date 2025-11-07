@@ -4,7 +4,7 @@ if [[ $(tty) == /dev/tty1 ]]; then
   export XDG_RUNTIME_DIR=$(ls -d /tmp/service-$USER.???* 2>/dev/null || mktemp -d /tmp/service-$USER.XXX | tee >(xargs chmod 0700))
   brightnessctl -q -d intel_backlight set 30%
   brightnessctl -q -d chromeos::kbd_backlight set 0%
-  exec dbus-run-session niri --session
+  exec dbus-run-session niri --session &> ~/.local/state/niri.log
 fi
 
 # Get the aliases and functions
