@@ -154,7 +154,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 2
+        width 1
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -259,6 +259,7 @@ layout {
 spawn-at-startup "pipewire"
 spawn-at-startup "mako"
 spawn-at-startup "waybar"
+//spawn-sh-at-startup "vicinae server"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets"
 spawn-at-startup "wbg" "/home/richie/Wallpapers/1322308.jpeg"
@@ -365,12 +366,14 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+Space hotkey-overlay-title="Open the Launcher Menu: fuzzel" { spawn "fuzzel"; }
+    //Mod+Space hotkey-overlay-title="Open the Launcher Menu: Vicinae" { spawn "vicinae" "toggle";}
     Mod+B hotkey-overlay-title="Open Web Browser: firefox" { spawn "firefox-wayland"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    //Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     // Screenshot (Hypr: grim -g "$(slurp)" - | wl-copy)
     //Mod+Shift+S { spawn "bash" "-c" "grim -g \"$(slurp)\" - | wl-copy"; }
     Mod+Shift+S { screenshot; }
     Mod+V { spawn "bash" "-c" "cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy"; }
+    //Mod+V repeat=false { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.

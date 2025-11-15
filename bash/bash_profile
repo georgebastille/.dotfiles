@@ -1,11 +1,26 @@
-# .bash_profile
+# .bash_profile  — login shell only
 
-if [[ $(tty) == /dev/tty1 ]]; then
-  export XDG_RUNTIME_DIR=$(ls -d /tmp/service-$USER.???* 2>/dev/null || mktemp -d /tmp/service-$USER.XXX | tee >(xargs chmod 0700))
-  brightnessctl -q -d intel_backlight set 30%
-  brightnessctl -q -d chromeos::kbd_backlight set 0%
-  exec dbus-run-session niri --session &> ~/.local/state/niri.log
+# Only start the compositor on the first VT
+if [ "$(tty)" = "/dev/tty1" ]; then
+  # Let elogind/turnstile set XDG_RUNTIME_DIR if present; otherwise fall back.
+#  if [ -z "$XDG_RUNTIME_DIR" ]; then
+#    XDG_RUNTIME_DIR="$(mktemp -d -p /tmp "runtime-$USER.XXXXXX")"
+#    chmod 0700 "$XDG_RUNTIME_DIR"
+#  fi
+#  export XDG_RUNTIME_DIR
+  export XDG_SESSION_TYPE=wayland
+
+  # Optional: tame panel & keyboard backlight if tool exists
+  if command -v brightnessctl >/dev/null 2>&1; then
+    brightnessctl -q -d intel_backlight set 30%
+    brightnessctl -q -d chromeos::kbd_backlight set 0%
+  fi
+
+  # Start a user D-Bus and niri as the session; log to state dir
+  mkdir -p "$HOME/.local/state/niri"
+  exec niri --session >>"$HOME/.local/state/niri/niri.log" 2>&1
+  #exec dbus-run-session niri --session >>"$HOME/.local/state/niri/niri.log" 2>&1
 fi
 
-# Get the aliases and functions
-[ -f $HOME/.bashrc ] && . $HOME/.bashrc
+# Non-login interactive shells inherit aliases/functions
+[ -f "$HOME/.bashrc" ] && . "$HOME/.bashrc"
