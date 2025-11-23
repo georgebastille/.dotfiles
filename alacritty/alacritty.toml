@@ -10,6 +10,9 @@ family = "NotoSansM Nerd Font Mono"
 
 # Alacritty auto-derives bold/italic from the family; no need to set explicitly.
 
+[colors]
+primary.background = "#000000"
+
 # --- Cursor ---
 [cursor]
 style.shape = "Block"
@@ -17,13 +20,14 @@ style.shape = "Block"
 
 # --- Scrolling ---
 [scrolling]
-history = 5000
+history = 10000
+multiplier = 3
 
 # --- Window ---
 [window]
-# kitty's window_margin_width ≈ Alacritty padding (in pixels)
 padding = { x = 2, y = 2 }
-
+dynamic_padding = false
+decorations = "None"   # fastest, minimal; remove if you want titlebar
 # Alacritty has no confirm-on-close prompt; nothing to set for kitty's confirm_os_window_close.
 
 # --- Selection / Clipboard ---
