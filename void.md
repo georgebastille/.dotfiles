@@ -18,15 +18,16 @@ sudo xbps-install Waybar alacritty btop fuzzel git niri mako uv tmux ripgrep fzf
 sudo xbps-install bluetui bluez
 
 ## Kernel command line
+
 GRUB_CMDLINE_LINUX_DEFAULT="quiet loglevel=3 rd.udev.log_level=3 rd.luks=0 rd.lvm=0 rd.md=0 rd.dm=0 rootfstype=ext4 i915.enable_psr=1 i915.enable_dc=2 i915.enable_fbc=1 noresume mitigations=off nmi_watchdog=0"
 
 ## Direct Boot
-sudo xbps-install systemd-boot-efistub
-sudo efibootmgr -c \
-  -d /dev/mmcblk0 \
-  -p 1 \
-  -L "Void Linux (UKI)" \
-  -l '\EFI\Linux\void-linux.efi'
+sudo xbps-install systemd-boot-efistub dracut-uefi
+sudo xbps-alternatives -s dracut-uefi 
+./dotter deploy
+sudo efibootmgr -c -d /dev/mmcblk0 -p 1 -L "Void Current" -l '\EFI\void\void-linux-current.efi'
+sudo efibootmgr -c -d /dev/mmcblk0 -p 1 -L "Void Previous" -l '\EFI\void\void-linux-previous.efi'
+Then change the boot order (look at the man page)
 
 
 ## Wireless Network stack
