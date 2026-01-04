@@ -1,6 +1,12 @@
 # Void on a Pixelbook 2017 Eve
 ## System packages
-sudo xbps-install dbus nerd-fonts noto-fonts-ttf brightnessctl curl python xdg-desktop-portal-gtk tlp seatd socklog-void wbg
+sudo xbps-install dbus nerd-fonts noto-fonts-ttf brightnessctl curl python xdg-desktop-portal-gtk tlp seatd socklog-void wbg chrony turnstile
+
+## Void Handbook items
+turnstile to launch dbus
+weekly ssd trimming
+
+
 
 ## Graphics
 sudo xbps-install void-repo-nonfree intel-gpu-tools intel-ucode intel-video-accel mesa-vulkan-intel mesa-dri vulkan-loader 

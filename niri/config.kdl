@@ -79,7 +79,7 @@ output "eDP-1" {
     // for the resolution.
     // If the mode is omitted altogether or is invalid, niri will pick one automatically.
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-	mode "2400x1600@60"
+	//mode "2400x1600@60"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
     scale 2
@@ -262,7 +262,8 @@ spawn-at-startup "waybar"
 //spawn-sh-at-startup "vicinae server"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets"
-spawn-at-startup "wbg" "/home/richie/Wallpapers/1322308.jpeg"
+spawn-at-startup "/home/richie/.local/bin/wbg-random.sh"
+//spawn-at-startup "wbg" "/home/richie/Wallpapers/1322308.jpeg"
  
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
