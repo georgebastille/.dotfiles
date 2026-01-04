@@ -25,7 +25,7 @@ sudo xbps-install bluetui bluez
 
 ## Kernel command line
 
-GRUB_CMDLINE_LINUX_DEFAULT="quiet loglevel=3 rd.udev.log_level=3 rd.luks=0 rd.lvm=0 rd.md=0 rd.dm=0 rootfstype=ext4 i915.enable_psr=1 i915.enable_dc=2 i915.enable_fbc=1 noresume mitigations=off nmi_watchdog=0"
+kernel_cmdline="quiet loglevel=4 rd.udev.log_level=3 rd.luks=0 rd.lvm=0 rd.md=0 rd.dm=0 rootfstype=ext4 i915.enable_psr=1 i915.enable_dc=2 i915.enable_fbc=1 noresume mitigations=off nmi_watchdog=0 iomem=relaxed mem_sleep_default=deep"
 
 ## Direct Boot
 sudo xbps-install systemd-boot-efistub dracut-uefi

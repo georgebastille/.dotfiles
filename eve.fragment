@@ -1,0 +1,139 @@
+# Pixelbook (Eve) kernel config fragment
+# Goal: minimal + reproducible + "boot-critical built-in", everything else modular
+#
+# zcat /etc/kernel/config.gz > .config
+# make olddefconfig
+# make localmodconfig
+# make olddefconfig
+# ./scripts/kconfig/merge_config.sh -m .config ../eve.fragment
+# make olddefconfig
+# make -j4 && make -j4 modules
+# sudo make install
+# sudo make modules_install
+
+# --- Boot / partitions / filesystems ---
+CONFIG_EFI=y
+CONFIG_EFI_STUB=y
+CONFIG_EFI_PARTITION=y
+
+# Root filesystem (you confirmed: ext4)
+CONFIG_EXT4_FS=y
+
+# Useful for EFI system partition access & removable media
+CONFIG_MSDOS_FS=y
+CONFIG_VFAT_FS=y
+
+# tmpfs is used by basically everything modern
+CONFIG_TMPFS=y
+
+
+# --- Storage: eMMC boot path via SDHCI ---
+# Core MMC stack
+CONFIG_MMC=y
+CONFIG_MMC_BLOCK=y
+
+# Host controller used on your system (00:1e.4 sdhci-pci)
+CONFIG_MMC_SDHCI=y
+CONFIG_MMC_SDHCI_PCI=y
+
+# On Intel laptops this often matters for enumeration
+CONFIG_MMC_SDHCI_ACPI=y
+
+# Explicitly drop NVMe (you said: eMMC, not NVMe)
+CONFIG_BLK_DEV_NVME=n
+
+
+# --- USB host (your xHCI controller is in use) ---
+CONFIG_USB=y
+CONFIG_USB_XHCI_HCD=y
+CONFIG_USB_XHCI_PCI=y
+
+
+# --- Graphics (Intel HD 615) ---
+CONFIG_DRM=y
+CONFIG_DRM_I915=y
+# Optional but commonly useful on laptops:
+CONFIG_DRM_FBDEV_EMULATION=y
+
+
+# --- Wi-Fi (Intel 7265) ---
+# Firmware is required anyway, so module is perfect here.
+CONFIG_IWLWIFI=m
+CONFIG_IWLMVM=m
+# Usually enabled automatically by deps, but safe to keep:
+CONFIG_MAC80211=m
+CONFIG_CFG80211=m
+
+
+# --- Bluetooth (Intel USB BT device 8087:0a2a) ---
+CONFIG_BT=m
+CONFIG_BTUSB=m
+CONFIG_BTINTEL=m
+
+
+# --- Webcam (Realtek USB camera) ---
+CONFIG_MEDIA_SUPPORT=m
+CONFIG_MEDIA_USB_SUPPORT=y
+CONFIG_USB_VIDEO_CLASS=m
+
+
+# --- Audio (you’re using snd_soc_avs currently) ---
+# Keep modular while iterating; audio stacks change a lot across kernel versions.
+CONFIG_SND=m
+CONFIG_SND_SOC=m
+CONFIG_SND_SOC_AVS=m
+
+
+# --- I2C / platform plumbing seen on your machine ---
+# (LPSS I2C/SPI/UART controllers show up in lspci)
+CONFIG_I2C=y
+CONFIG_I2C_DESIGNWARE_CORE=y
+CONFIG_I2C_I801=m
+
+
+# --- Thermal controllers you’re using ---
+CONFIG_INTEL_PCH_THERMAL=m
+CONFIG_PROC_THERMAL=m
+
+# --- Tick handling: laptop-friendly ---
+CONFIG_NO_HZ=y
+CONFIG_NO_HZ_IDLE=y
+CONFIG_NO_HZ_FULL=n
+
+# --- Timer frequency: lower overhead, better power ---
+CONFIG_HZ_300=y
+CONFIG_HZ=300
+CONFIG_HZ_1000=n
+
+# --- Disable general kernel debug ---
+CONFIG_DEBUG_KERNEL=n
+CONFIG_DEBUG_MISC=n
+CONFIG_DEBUG_PREEMPT=n
+
+# --- Drop debug symbols (smaller + faster kernel) ---
+CONFIG_DEBUG_INFO=n
+CONFIG_DEBUG_INFO_DWARF_TOOLCHAIN_DEFAULT=n
+
+# --- Disable tracing / instrumentation ---
+CONFIG_FTRACE=n
+CONFIG_FUNCTION_TRACER=n
+CONFIG_KPROBES=n
+CONFIG_KPROBE_EVENTS=n
+CONFIG_UPROBES=n
+
+# --- Keep debugfs but lock it down ---
+CONFIG_DEBUG_FS=y
+CONFIG_DEBUG_FS_ALLOW_ALL=n
+
+# --- Optional: make Intel WiFi built-in (early + reliable init) ---
+# Uncomment if you want WiFi in-kernel instead of modules
+CONFIG_IWLWIFI=m
+CONFIG_IWLMVM=m
+CONFIG_IWLWIFI_LEDS=y
+
+
+
+CONFIG_SND_SOC_RT5663=m
+CONFIG_SND_SOC_RT5514=m
+CONFIG_SND_SOC_INTEL_AVS_MACH_RT5663=m
+CONFIG_SND_SOC_INTEL_AVS_MACH_RT5514=m
