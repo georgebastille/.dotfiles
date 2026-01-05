@@ -53,7 +53,7 @@
   "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
   "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
   "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-  "on-click": "bluetui",
+  "on-click": "exec alacritty --class bluetui -e bluetui",
  }, 
 
 "network": {
@@ -63,7 +63,7 @@
       "tooltip-format": "{ipaddr}",
       "tooltip-format-wifi": "{essid} ({signalStrength}%)  | {ipaddr}",
       "tooltip-format-ethernet": "{ifname} 🖧 | {ipaddr}",
-      "on-click": "alacritty -e impala"
+      "on-click": "exec alacritty --class nmtui -e nmtui connect"
     },
 
 "battery": {

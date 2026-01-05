@@ -256,13 +256,14 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "pipewire"
+//spawn-at-startup "pipewire"
 spawn-at-startup "mako"
 spawn-at-startup "waybar"
 //spawn-sh-at-startup "vicinae server"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
-spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets"
-spawn-at-startup "/home/richie/.local/bin/wbg-random.sh"
+//spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets"
+//spawn-at-startup "/home/richie/.local/bin/wbg-random.sh"
+spawn-at-startup "swaybg" "-m" "stretch" "-i" "/home/richie/Wallpapers/1084546.png"
 //spawn-at-startup "wbg" "/home/richie/Wallpapers/1322308.jpeg"
  
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -304,6 +305,21 @@ window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     default-column-width {}
 }
+
+window-rule {
+    match app-id="nmtui"
+    open-floating true
+    default-column-width { proportion 0.5; }
+    default-window-height { proportion 0.7; }
+}
+
+window-rule {
+    match app-id="bluetui"
+    open-floating true
+    default-column-width { proportion 0.5; }
+    default-window-height { proportion 0.5; }
+}
+
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
@@ -368,7 +384,8 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+Space hotkey-overlay-title="Open the Launcher Menu: fuzzel" { spawn "fuzzel"; }
     //Mod+Space hotkey-overlay-title="Open the Launcher Menu: Vicinae" { spawn "vicinae" "toggle";}
-    Mod+B hotkey-overlay-title="Open Web Browser: firefox" { spawn "firefox-wayland"; }
+    Mod+B hotkey-overlay-title="Open Web Browser: firefox" { spawn "firefox"; }
+    //Mod+B hotkey-overlay-title="Open Web Browser: firefox" { spawn "firefox-wayland"; }
     //Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     // Screenshot (Hypr: grim -g "$(slurp)" - | wl-copy)
     //Mod+Shift+S { spawn "bash" "-c" "grim -g \"$(slurp)\" - | wl-copy"; }
