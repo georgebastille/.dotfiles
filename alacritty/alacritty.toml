@@ -1,17 +1,34 @@
 # Alacritty config generated from your kitty.conf
 
+# Use same colorscheme in neovim and alacritty
+# Lazy install neovim plugins to make this file available:q
+
+general.import = ["~/.local/share/nvim/lazy/vscode.nvim/extra/alacritty/vscode-dark.toml"]
+[colors]
+#primary.background = "#000000"
+
 # --- Fonts ---
 [font]
-size = 9.0
+size = 8.0
+offset = { x = 0, y = 1 }
 
 [font.normal]
-family = "NotoSansM Nerd Font Mono"
-# style = "Regular"   # (optional)
+family = "JetBrainsMono Nerd Font"
+#family = "IosevkaTerm Nerd Font"
+style = "Regular"
 
-# Alacritty auto-derives bold/italic from the family; no need to set explicitly.
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
 
-[colors]
-primary.background = "#000000"
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
 
 # --- Cursor ---
 [cursor]
@@ -25,7 +42,7 @@ multiplier = 3
 
 # --- Window ---
 [window]
-padding = { x = 2, y = 2 }
+padding = { x = 3, y = 3 }
 dynamic_padding = false
 decorations = "None"   # fastest, minimal; remove if you want titlebar
 # Alacritty has no confirm-on-close prompt; nothing to set for kitty's confirm_os_window_close.
@@ -43,7 +60,6 @@ save_to_clipboard = true
 # In Alacritty you can import a theme file. If you have an Afterglow palette for Alacritty,
 # place it at the path below (or adjust to where you keep themes).
 #import = ["~/.config/alacritty/themes/afterglow.toml"]
-
 # If you don't have an Afterglow theme file yet, you can comment the import above
 # and paste a [colors] section here later.
 
