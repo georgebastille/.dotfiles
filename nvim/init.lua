@@ -41,6 +41,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { "nvim-tree/nvim-web-devicons", lazy = true },
   { "Mofiqul/vscode.nvim" },
+  { "github/copilot.vim" },
   {
     "nvim-lualine/lualine.nvim",
     -- opts = { options = { theme = "ayu_dark", icons_enabled = true, section_separators = "", component_separators = "", globalstatus = true } },
@@ -216,7 +217,7 @@ require("lazy").setup({
     keys = {
       {
         -- Customize or remove this keymap to your liking
-        "<leader>f",
+        "<leader>g",
         function()
           require("conform").format({ async = true })
         end,
@@ -231,6 +232,7 @@ require("lazy").setup({
     opts = {
       -- Define your formatters
       formatters_by_ft = {
+        c = { "clang_format" },
         lua = { "stylua" },
         python = { "ruff_format", "ruff" },
         javascript = { "prettierd", "prettier", stop_after_first = true },
@@ -274,6 +276,8 @@ map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP: Rename symbol" })
 -- Jump to previous/next diagnostic
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
+map("n", "<leader>a", vim.lsp.buf.code_action, { desc = "LSP code action" })
+
 
 -- Populate quickfix list with all diagnostics
 map("n", "<leader>q", vim.diagnostic.setqflist, { desc = "Diagnostics → Quickfix list" })
@@ -281,6 +285,17 @@ map("n", "<leader>c", "<cmd>cclose<CR>", { desc = "Close quickfix list" })
 
 -- Populate location list with buffer diagnostics (optional)
 map("n", "<leader>l", vim.diagnostic.setloclist, { desc = "Diagnostics → Location list" })
+
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local buf = args.buf
+    vim.keymap.set("n", "<leader>f", function()
+      vim.lsp.buf.format({ async = true })
+    end, { buffer = buf, desc = "Format buffer with LSP" })
+  end,
+})
+
 
 ------------------------------------------------------------
 -- Tiny extras that don’t change defaults much
