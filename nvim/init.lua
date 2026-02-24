@@ -307,6 +307,16 @@ vim.opt.number = true
 vim.lsp.enable("c3_lsp")
 
 -- Set colorscheme
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    local bg = "#000000"
+    vim.api.nvim_set_hl(0, "Normal", { bg = bg })
+    vim.api.nvim_set_hl(0, "NormalNC", { bg = bg })
+    vim.api.nvim_set_hl(0, "SignColumn", { bg = bg })
+    vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = bg })
+  end,
+})
+
 vim.cmd.colorscheme("vscode")
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
