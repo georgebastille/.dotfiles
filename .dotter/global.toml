@@ -6,26 +6,18 @@ depends = []
 [default.variables]
 
 [default.files]
-"hypr/hyprland.conf" = "~/.config/hypr/hyprland.conf"
-"waybar/" = "~/.config/waybar/"
-"kitty/" = "~/.config/kitty/"
 "nvim/init.lua" = "~/.config/nvim/init.lua"
 "bash/bash_profile" = "~/.bash_profile"
 "bash/bashrc" = "~/.bashrc"
 "bash/inputrc" = "~/.inputrc"
 "bash/git-prompt.sh" = "~/.prompt-git.sh"
 "tmux.conf" = "~/.tmux.conf"
-"launchers/brave-browser.desktop" = "~/.local/share/applications/brave-browser.desktop"
-"launchers/obsidian.desktop" = "~/.local/share/applications/obsidian.desktop"
-"launchers/chatgpt.desktop" = "~/.local/share/applications/chatgpt.desktop"
-"launchers/web-search.desktop" = "~/.local/share/applications/web-search.desktop"
-"tofi/config" = "~/.config/tofi/config"
-"fuzzel/fuzzel.ini" = "~/.config/fuzzel/fuzzel.ini"
-"niri/config.kdl" = "~/.config/niri/config.kdl"
 "alacritty/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
-"mako/config" = "~/.config/mako/config"
 "SpeedCrunch/SpeedCrunch.ini" = "~/.config/SpeedCrunch/SpeedCrunch.ini"
-
+"profile" = "~/.profile"
+"noctalia" = "~/.config/noctalia"
+"launchers" = "~/.local/share/applications"
+"niri" = "~/.config/niri"
 
 [settings]
 default_target_type = "automatic"

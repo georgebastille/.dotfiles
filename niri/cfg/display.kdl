@@ -1,0 +1,9 @@
+// ────────────── Output Configuration ──────────────
+// You can run `niri msg outputs` to get the correct name for your displays.
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
+
+output "eDP-1" {
+    scale 2
+    transform "normal"
+    position x=0 y=0
+}

@@ -1,0 +1,29 @@
+// ────────────── Input Configuration ──────────────
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Input
+
+input {
+    keyboard {
+        xkb {
+            layout "gb" // Use the British keyboard layout
+            options "ctrl:nocaps" // Caps Lock as Ctrl
+        }
+        numlock // Enable numlock on startup
+    }
+
+    touchpad {
+        tap // Enable tap-to-click
+        dwt // Disable while typing
+        drag false
+        natural-scroll // Enable natural (macOS-style) scrolling
+    }
+
+    mouse {
+    }
+
+    trackpoint {
+        off
+    }
+
+    focus-follows-mouse max-scroll-amount="50%" // Automatically focus windows under the mouse pointer
+    workspace-auto-back-and-forth // Enable workspace back & forth switching
+}
