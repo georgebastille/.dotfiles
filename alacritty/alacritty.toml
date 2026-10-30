@@ -1,11 +1,14 @@
+
+general.import = ["~/.config/alacritty/themes/noctalia.toml"]
 # Alacritty config generated from your kitty.conf
 
 # Use same colorscheme in neovim and alacritty
 # Lazy install neovim plugins to make this file available:q
 
-general.import = ["~/.local/share/nvim/lazy/vscode.nvim/extra/alacritty/vscode-dark.toml"]
-[colors]
-primary.background = "#000000"
+#general.import = ["~/.local/share/nvim/lazy/vscode.nvim/extra/alacritty/vscode-dark.toml"]
+
+#[colors]
+#primary.background = "#000000"
 
 # --- Fonts --- (laptop monitor)
 [font]
