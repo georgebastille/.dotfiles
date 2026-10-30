@@ -14,10 +14,12 @@ depends = []
 "tmux.conf" = "~/.tmux.conf"
 "alacritty/alacritty.toml" = "~/.config/alacritty/alacritty.toml"
 "SpeedCrunch/SpeedCrunch.ini" = "~/.config/SpeedCrunch/SpeedCrunch.ini"
-"profile" = "~/.profile"
+# "profile" = "~/.profile"  # disabled: never deployed; sets TERM/QT/GTK_THEME globally
 "noctalia" = "~/.config/noctalia"
 "launchers" = "~/.local/share/applications"
 "niri" = "~/.config/niri"
+"gtk-4.0/gtk.css" = "~/.config/gtk-4.0/gtk.css"
+"systemd/xdg-desktop-portal-gnome.service.d/wayland-only.conf" = "~/.config/systemd/user/xdg-desktop-portal-gnome.service.d/wayland-only.conf"
 
 [settings]
 default_target_type = "automatic"
