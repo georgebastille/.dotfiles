@@ -41,7 +41,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { "nvim-tree/nvim-web-devicons", lazy = true },
   { "Mofiqul/vscode.nvim" },
-  { "github/copilot.vim" },
   {
     "nvim-lualine/lualine.nvim",
     -- opts = { options = { theme = "ayu_dark", icons_enabled = true, section_separators = "", component_separators = "", globalstatus = true } },
