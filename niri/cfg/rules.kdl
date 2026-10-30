@@ -3,7 +3,15 @@
         clip-to-geometry true
     }
 
+    // Floating Noctalia settings window (upstream uses 1080x920; scaled to fit 1200x800 logical).
+    window-rule {
+        match app-id="dev.noctalia.Noctalia"
+        open-floating true
+        default-column-width { fixed 1000; }
+        default-window-height { fixed 720; }
+    }
+
     layer-rule {
-        match namespace="^noctalia-wallpaper*"
+        match namespace="^noctalia-wallpaper"
         place-within-backdrop true
     }
